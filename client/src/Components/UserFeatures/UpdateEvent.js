@@ -11,6 +11,9 @@ import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
+import CloudIcon from "@mui/icons-material/Cloud";
+import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 const UpdateEvent = () => {
   const [displayMessage, setDisplayMessage] = React.useState({
@@ -24,7 +27,7 @@ const UpdateEvent = () => {
   const navigate = useNavigate();
 
   const { eventId } = useParams();
-  const eventDetails = events.filter((event) => event._id === eventId)[0]
+  const eventDetails = events.filter((event) => event._id === eventId)[0];
 
   const [updatedEventDetails, setUpdatedEventDetails] = useState({
     name: eventDetails.name,
@@ -41,7 +44,9 @@ const UpdateEvent = () => {
     ) {
       const delayFetch = setTimeout(async () => {
         const response = await fetch(
-          `${process.env.REACT_APP_BASE_URL}/weather?location=${updatedEventDetails.location}&date=${updatedEventDetails.date.slice(0,10)}`,
+          `${process.env.REACT_APP_BASE_URL}/weather?location=${
+            updatedEventDetails.location
+          }&date=${updatedEventDetails.date.slice(0, 10)}`,
           {
             method: "GET",
             headers: {
@@ -93,7 +98,10 @@ const UpdateEvent = () => {
         mode: "info",
         message: "select a valid date",
       });
-      setUpdatedEventDetails({ ...updatedEventDetails, ["date"]: eventDetails.date.slice(0,10)  });
+      setUpdatedEventDetails({
+        ...updatedEventDetails,
+        ["date"]: eventDetails.date.slice(0, 10),
+      });
       setTimeout(() => {
         setDisplayMessage({ ...displayMessage, ["status"]: false });
       }, 2000);
@@ -103,7 +111,10 @@ const UpdateEvent = () => {
         mode: "info",
         message: "Choose a date in next 14 days only",
       });
-      setUpdatedEventDetails({ ...updatedEventDetails, ["date"]: eventDetails.date.slice(0,10) });
+      setUpdatedEventDetails({
+        ...updatedEventDetails,
+        ["date"]: eventDetails.date.slice(0, 10),
+      });
       setTimeout(() => {
         setDisplayMessage({ ...displayMessage, ["status"]: false });
       }, 2000);
@@ -251,16 +262,24 @@ const UpdateEvent = () => {
               value={updatedEventDetails.location}
               onChange={(e) => inputHandler(e, "location")}
             />
-            <TextField
-              multiline={true}
-              rows={2}
-              margin="normal"
-              fullWidth
-              label="weather Info"
-              type="text"
-              disabled
-              value={updatedEventDetails.weatherInfo}
-            />
+            <Typography align="start" sx={{ mt: 4 }}>
+              Weather Forecast:
+            </Typography>
+            <Typography sx={{ fontWeight: "bold", color: "#003366" }}>
+              {updatedEventDetails.weatherInfo}
+              {updatedEventDetails.weatherInfo.includes("sun") && (
+                <WbSunnyIcon> </WbSunnyIcon>
+              )}
+              {updatedEventDetails.weatherInfo.includes("cloud") && (
+                <CloudIcon></CloudIcon>
+              )}
+              {updatedEventDetails.weatherInfo.includes("thunderstorm") && (
+                <ThunderstormIcon></ThunderstormIcon>
+              )}
+              {updatedEventDetails.weatherInfo.includes("rain") && (
+                <ThunderstormIcon></ThunderstormIcon>
+              )}
+            </Typography>
 
             <NavLink to="/upcoming-events">
               <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
@@ -277,6 +296,7 @@ const UpdateEvent = () => {
               Confirm
             </Button>
           </Box>
+
           <Typography sx={{ color: "grey" }}>
             ( *Note: currently we can forecast weather for next 14 days only )
           </Typography>

@@ -9,6 +9,9 @@ import EventIcon from "@mui/icons-material/Event";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
+import CloudIcon from "@mui/icons-material/Cloud";
+import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 const AddNewEvent = () => {
   const token = useSelector((state) => state.user.token);
@@ -24,7 +27,7 @@ const AddNewEvent = () => {
     name: "",
     date: "",
     location: "",
-    weatherInfo: "weather updates will come from 14 days",
+    weatherInfo: "weather forecast will be shown here",
     description: "",
   });
 
@@ -245,27 +248,33 @@ const AddNewEvent = () => {
               type="text"
               onChange={(e) => inputHandler(e, "location")}
             />
-            <TextField
-              multiline={true}
-              rows={2}
-              margin="normal"
-              fullWidth
-              label="weather Info"
-              type="text"
-              disabled
-              value={eventDetails.weatherInfo}
-            />
-           
+            <Typography align="start" sx={{ mt: 4 }}>
+              Weather Forecast:
+            </Typography>
+
+            <Typography sx={{ fontWeight: "bold", color: "#003366" }}>
+              {eventDetails.weatherInfo}
+              {eventDetails.weatherInfo.includes("sun") && (
+                <WbSunnyIcon> </WbSunnyIcon>
+              )}
+              {eventDetails.weatherInfo.includes("cloud") && (
+                <CloudIcon></CloudIcon>
+              )}
+              {eventDetails.weatherInfo.includes("thunderstorm") && (
+                <ThunderstormIcon></ThunderstormIcon>
+              )}
+              {eventDetails.weatherInfo.includes("rain") && (
+                <ThunderstormIcon></ThunderstormIcon>
+              )}
+            </Typography>
+
             <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
               Add
             </Button>
-            
           </Box>
-          <Typography sx={{color:'grey'}}>
-          ( *Note: currently we can forecast weather for next 14
-            days only )
+          <Typography sx={{ color: "grey" }}>
+            ( *Note: currently we can forecast weather for next 14 days only )
           </Typography>
-          
         </Box>
       </Container>
     </>

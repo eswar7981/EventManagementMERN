@@ -136,7 +136,7 @@ const UpcomingEvents = () => {
               </Box>
               <Box alignItems="center" sx={{ display: "flex", }}>
                 <Typography variant="h6">Date </Typography>
-                <Typography variant="h6" sx={{ ml: 6, fontWeight: "500",color:'#333333' }}>
+                <Typography variant="h6" sx={{ ml: 6, fontWeight: "500",color:'#003366' }}>
                   : {new Date(event.date).getUTCDate()}-
                   {new Date(event.date).getUTCMonth() + 1}-
                   {new Date(event.date).getUTCFullYear()}
@@ -144,13 +144,13 @@ const UpcomingEvents = () => {
               </Box>
               <Box sx={{ display: "flex" }}>
                 <Typography variant="h6">Location </Typography>
-                <Typography variant="h6" sx={{ ml: 2, fontWeight: "500",color:'#333333' }}>
+                <Typography variant="h6" sx={{ ml: 2, fontWeight: "500",color:'#003366' }}>
                   : {event.location}
                 </Typography>
               </Box>
               <Box align="start" sx={{ display: "block" }}>
                 <Typography  variant="h6">Description : </Typography>
-                <Typography  fullWidth  variant="h6" sx={{ ml: 10 ,color:'#333333',fontWeight:'500'}}>
+                <Typography  fullWidth  variant="h6" sx={{ ml: 10 ,color:'#003366',fontWeight:'500'}}>
                   {event.description}
                 </Typography>
               </Box>
