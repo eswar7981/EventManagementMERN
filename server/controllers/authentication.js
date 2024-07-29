@@ -35,7 +35,7 @@ exports.registerNewUser = async (req, res) => {
 exports.signIn = async (req, res) => {
   const { email: email, password: password } = req.body;
   const ipAddress = req.ip;
-
+  
   try {
     const { data: data, error } = await supabase.auth.signInWithPassword({
       email: email,

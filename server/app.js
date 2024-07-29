@@ -18,6 +18,10 @@ app.use(cors())
 app.use(bodyParser.json({limit:'50mb',extended:true}))
 app.use(express.json())
 
+app.use('/server-wakeup',((req,res)=>{
+    return res.sendStatus(200)
+}))
+
 app.use('/authentication',authenticationRoutes)
 app.use('/',authorisedRoutes)
 
