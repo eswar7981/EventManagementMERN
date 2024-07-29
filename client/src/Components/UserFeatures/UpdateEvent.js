@@ -35,7 +35,6 @@ const UpdateEvent = () => {
   });
 
   useEffect(() => {
-    console.log(updatedEventDetails.date)
     if (
       updatedEventDetails.location !== eventDetails.location ||
       updatedEventDetails.date !== eventDetails.date

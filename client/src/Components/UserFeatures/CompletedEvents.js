@@ -13,7 +13,6 @@ const CompletedEvents = () => {
     (event) => new Date(event.date).getTime() < new Date().getTime()
   );
 
-  console.log(completedEvents);
 
   return (
     <Container sx={{ mt: 15, display: "block",mb:5 }} component="main" maxWidth="xs">

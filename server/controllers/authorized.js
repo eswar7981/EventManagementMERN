@@ -70,7 +70,6 @@ exports.updateEventDetails = async (req, res) => {
 
 exports.getWeatherInfo = async (req, res) => {
   const { location: location, date: date } = req.query;
-  console.log(date);
   try {
     const response = await fetch(
       `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&key=${process.env.WEATHER_API_ACCESS_KEY}`
@@ -122,7 +121,6 @@ exports.logOut = async (req, res) => {
   try {
     const { error } = await supabase.auth.signOut(sessiontoken);
     const userId = new mongoose.mongo.ObjectId(req.id);
-    console.log(userId, req.ip);
     const updateSession = await Session.updateOne(
       { userId: userId, ipAddress: req.ip },
       { logoutTime: new Date() }

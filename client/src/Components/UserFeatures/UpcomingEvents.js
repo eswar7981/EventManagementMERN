@@ -41,7 +41,7 @@ const UpcomingEvents = () => {
         const filteredEvents = data.events.filter(
           (event) => new Date(event.date).getTime() >= new Date().getTime()
         );
-        console.log(filteredEvents);
+
         setUpcomingEvents(filteredEvents.reverse());
       } else {
       }

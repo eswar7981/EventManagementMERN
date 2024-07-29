@@ -53,7 +53,6 @@ const SignIn = () => {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data.sessionToken);
         dispatch(userActions.setToken(data.sessionToken));
         dispatch(userActions.login());
         setDisplayMessage({

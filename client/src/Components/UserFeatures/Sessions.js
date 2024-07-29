@@ -55,7 +55,6 @@ const Sessions = () => {
 
       if (response.ok) {
         const sessions = await response.json();
-        console.log(sessions.data);
         setSessions(sessions.data);
       }
     });

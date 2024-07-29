@@ -59,7 +59,6 @@ const NavigationBar = () => {
         dispatch(userActions.userLogOut());
       }, 500);
     } else {
-      console.log("failed");
     }
   };
 
