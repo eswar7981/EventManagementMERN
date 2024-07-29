@@ -24,7 +24,7 @@ const UpdateEvent = () => {
   const navigate = useNavigate();
 
   const { eventId } = useParams();
-  const eventDetails = events.filter((event) => event._id === eventId)[0].reverse()
+  const eventDetails = events.filter((event) => event._id === eventId)[0]
 
   const [updatedEventDetails, setUpdatedEventDetails] = useState({
     name: eventDetails.name,
