@@ -23,10 +23,10 @@ exports.registerNewUser = async (req, res) => {
       });
       newUser.save();
 
-      res.status(200).json({ status: "success" });
+      res.sendStatus(200);
     }
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
@@ -39,29 +39,25 @@ exports.signIn = async (req, res) => {
       email: email,
       password: password,
     });
+
     if (error) {
       res.status(error.status).json({ error: error.message });
     } else {
       const supabaseId = data.user.id;
-
       const user = await User.findOne({ supabaseId: supabaseId });
       const mongoId = user._id;
-
       const newSession = new Session({
         userId: mongoId,
         loginTime: new Date(),
         ipAddress: ipAddress,
       });
-
       newSession.save();
-
       const sessionToken = data.session.access_token;
-
       res.status(200).json({ sessionToken: sessionToken });
     }
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
-exports.logOut = (req, res) => {};
+

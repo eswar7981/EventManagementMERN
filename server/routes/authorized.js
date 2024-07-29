@@ -15,23 +15,19 @@ router.use("/", async (req, res, next) => {
       req.id = user._id;
       next();
     } else {
-      res.status(error.status).json({ error: error.message });
+      res.status(404).json({ error: 'not a valid token' });
     }
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
 router.post("/events", controller.addNewEvent);
-
 router.get("/events", controller.getAllEvents);
-
 router.put("/events/:id", controller.updateEventDetails);
-
 router.delete("/events/:id", controller.deleteEvent);
-
 router.get("/sessions", controller.getSessionsInfo);
-
 router.get("/weather", controller.getWeatherInfo);
+router.delete("/log-out", controller.logOut);
 
 module.exports = router;

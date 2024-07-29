@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  supabaseId:{
-    type:String,
-    required:true
+  supabaseId: {
+    type: String,
+    required: true,
   },
   name: {
     type: String,
@@ -16,4 +16,4 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-module.exports =mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);

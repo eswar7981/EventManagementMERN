@@ -2,6 +2,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.44.4",
     "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -14,11 +15,10 @@
   "version": "1.0.0",
   "description": "works on serverside logic of application",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app",
-    "dev":"nodemon app"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "author": "Sai Eswar",
   "license": "ISC"
