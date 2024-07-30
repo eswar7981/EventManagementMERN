@@ -54,9 +54,19 @@ npm run dev
 ```
 ## 3. Technologies and Tools:
 
-### Frontend : React, Material UI
+### Frontend : React <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>, Material UI <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/materialui/materialui-plain.svg" width="40" height="40"/>
 
-### Backemd  : Express, mongoDB, supabase client, Node
+### Backend  : Express <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/express/express-original-wordmark.svg" width="40" height="40"/>, mongoDB <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/mongodb/mongodb-plain.svg"  width="40" height="40" />  , Node <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> , supabase client
+
+
+
+## Deployment:
+
+
+### Frontend : Netlify
+
+### Backend : Render
+
 
 ## 4. API END POINTS:
 
@@ -475,7 +485,7 @@ error:"Internal Server Error"
 **Description:** Stores information about users of the application.
 
 - **`_id`**: `ObjectId` (Primary Key)
-- **`supabaseId`**: `ObjectId` (Required)
+- **`supabaseId`**: `ObjectId` (Unique,Required)
 - **`name`**: `String` (Required) - The user's unique username.
 - **`email`**: `String` (Unique, Required) - The user's email address.
 
