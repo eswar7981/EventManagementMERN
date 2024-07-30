@@ -74,10 +74,10 @@ const NavigationBar = () => {
       <AppBar position="static">
         <Container
           sx={{ backgroundColor: "#007BFF", display: "flex" }}
-       
+        maxWidth='xl'
         >
           <Box
-         
+        
             sx={{
              
               display: {
@@ -119,6 +119,8 @@ const NavigationBar = () => {
                   <NavLink to={page.path} style={{ textDecoration: "None" }}>
                     <Button
                       key={page.path}
+
+                     
                       sx={{
                         my: 2,
                         color: "#FFFFFF",
@@ -126,7 +128,6 @@ const NavigationBar = () => {
                         fontFamily: "roboto,sans-serif",
                         fontWeight: "500",
                         fontStyle: "normal",
-                     
                       }}
                     >
                       {page.pageName}
@@ -145,6 +146,15 @@ const NavigationBar = () => {
                     fontFamily: "roboto,sans-serif",
                     fontWeight: "500",
                     fontStyle: "normal",
+                    
+                    ml:{
+                      xs:0,
+                      md:60,
+                      l:100,
+                    
+                     }
+                   
+                   
                   }}
                   onClick={logOut}
                 >
