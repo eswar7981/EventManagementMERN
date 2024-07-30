@@ -84,7 +84,7 @@ exports.getWeatherInfo = async (req, res) => {
 
         return res
           .status(200)
-          .json({ status: "success", data: weatherForecast });
+          .json({ data: weatherForecast });
       } else {
         return res.status(404).json({ data: { message: "no data found" } });
       }

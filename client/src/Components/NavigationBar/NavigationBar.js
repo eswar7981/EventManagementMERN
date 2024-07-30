@@ -71,25 +71,26 @@ const NavigationBar = () => {
           </Alert>
         </div>
       )}
-      <AppBar>
+      <AppBar position="static">
         <Container
-          align="center"
-          sx={{ backgroundColor: "#007BFF" }}
-          maxWidth="xl"
+          sx={{ backgroundColor: "#007BFF", display: "flex" }}
+       
         >
           <Box
+         
             sx={{
-              flexGrow: 1,
+             
               display: {
-                xs: "none",
-                md: "flex",
+                sm: "flex",
+                xs:"flex",
+                md:"flex",
+                lg:"flex",
                 fontWeight: "800",
-                alignContent: "center",
-                gap: "20px",
-              },
+              }
             }}
+            
           >
-            {login ? (
+            {login && (
               <>
                 {userPages.map((page, index) => (
                   <NavLink to={page.path} style={{ textDecoration: "None" }}>
@@ -102,26 +103,8 @@ const NavigationBar = () => {
                         fontFamily: "roboto,sans-serif",
                         fontWeight: "500",
                         fontStyle: "normal",
-                      }}
-                    >
-                      {page.pageName}
-                    </Button>
-                  </NavLink>
-                ))}
-              </>
-            ) : (
-              <>
-                {authPages.map((page, index) => (
-                  <NavLink to={page.path} style={{ textDecoration: "None" }}>
-                    <Button
-                      key={page.path}
-                      sx={{
-                        my: 2,
-                        color: "#FFFFFF",
-                        display: "block",
-                        fontFamily: "roboto,sans-serif",
-                        fontWeight: "500",
-                        fontStyle: "normal",
+                        flexGrow: 1,
+                      
                       }}
                     >
                       {page.pageName}
@@ -130,25 +113,45 @@ const NavigationBar = () => {
                 ))}
               </>
             )}
-            <Box sx={{ ml: 50 }} sm={{ ml: 0 }} md={{ ml: 0 }}>
-              {login && (
-                <NavLink style={{ textDecoration: "None" }}>
-                  <Button
-                    sx={{
-                      my: 2,
-                      color: "#FFFFFF",
-                      display: "block",
-                      fontFamily: "roboto,sans-serif",
-                      fontWeight: "500",
-                      fontStyle: "normal",
-                    }}
-                    onClick={logOut}
-                  >
-                    Log Out
-                  </Button>
-                </NavLink>
-              )}
-            </Box>
+            {!login && (
+              <>
+                {authPages.map((page, index) => (
+                  <NavLink to={page.path} style={{ textDecoration: "None" }}>
+                    <Button
+                      key={page.path}
+                      sx={{
+                        my: 2,
+                        color: "#FFFFFF",
+                        display: "flex",
+                        fontFamily: "roboto,sans-serif",
+                        fontWeight: "500",
+                        fontStyle: "normal",
+                     
+                      }}
+                    >
+                      {page.pageName}
+                    </Button>
+                  </NavLink>
+                ))}
+              </>
+            )}
+            {login && (
+              <NavLink style={{ textDecoration: "None" }}>
+                <Button
+                  sx={{
+                    my: 2,
+                    color: "#FFFFFF",
+                    display: "block",
+                    fontFamily: "roboto,sans-serif",
+                    fontWeight: "500",
+                    fontStyle: "normal",
+                  }}
+                  onClick={logOut}
+                >
+                  Log Out
+                </Button>
+              </NavLink>
+            )}
           </Box>
         </Container>
       </AppBar>
