@@ -88,7 +88,6 @@ const NavigationBar = () => {
                 fontWeight: "800",
               }
             }}
-            
           >
             {login && (
               <>
