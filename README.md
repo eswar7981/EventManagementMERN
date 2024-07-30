@@ -3,7 +3,7 @@
 ### live link : https://event-management158.netlify.app
 
 ## 1. PROJECT OVERVIEW:
-• It is an user specific application where user can manage the scheduled events with a weather update.
+• It is an user specific application where user can manage the scheduled events with a weather update feature.
 
 • Basically, user can read, add, update, deleted the events.
 
@@ -88,6 +88,14 @@ password:'password',
 **Response:**
 
 **Success (200)**
+
+**Error (400)**
+
+```
+{
+error:"password should contain atleast 6 characters"
+}
+```
 
 **Error (400)**
 
