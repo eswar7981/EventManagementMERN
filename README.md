@@ -1,6 +1,6 @@
 # Event Management (MERN stack Application):
 
-### live link : https://event-management158.netlify.app
+
 
 ## 1. PROJECT OVERVIEW:
 • It is an user specific application where user can manage the scheduled events with a weather update feature.
