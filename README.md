@@ -76,7 +76,7 @@ npm run dev
 
 **HTTP Method: POST**
 
-**URL: /api/authentication/register**
+**URL: v1/api/authentication/register**
 
 **Request body:**
 
@@ -126,7 +126,7 @@ error:"Internal Server Error"
 
 **HTTP Method: POST**
 
-**URL: /api/authentication/sign-in**
+**URL: v1/api/authentication/sign-in**
 
 **Request body:**
 
@@ -175,7 +175,7 @@ error:"Internal Server Error"
 
 **HTTP Method: GET**
 
-**URL: /api/weather/:location**
+**URL: v1/api/weather/:location**
 
 **Request headers:**
 
@@ -222,7 +222,7 @@ error:"Internal Server Error"
 
 **HTTP Method: POST**
 
-**URL: /api/events**
+**URL: v1/api/events**
 
 **Request body:**
 
@@ -268,7 +268,7 @@ error:"Internal Server Error"
 
 **HTTP Method: GET**
 
-**URL: /api/events**
+**URL: v1/api/events**
 
 **Request headers:**
 
@@ -321,7 +321,7 @@ error:"Internal Server Error"
 
 **HTTP Method: POST**
 
-**URL: /api/events/:id**
+**URL: v1/api/events/:id**
 
 **Request body:**
 
@@ -367,7 +367,7 @@ error:"Internal Server Error"
 
 **HTTP Method: DELETE**
 
-**URL: /api/events/:id**
+**URL: v1/api/events/:id**
 
 **Request headers:**
 
@@ -401,7 +401,7 @@ error:"Internal Server Error"
 
 **HTTP Method: GET**
 
-**URL: /api/sessions**
+**URL: v1/api/sessions**
 
 **Request headers:**
 
@@ -448,7 +448,7 @@ error:"Internal Server Error"
 
 **HTTP Method: DELETE**
 
-**URL: /api/log-out**
+**URL: v1/api/log-out**
 
 **Request headers:**
 
